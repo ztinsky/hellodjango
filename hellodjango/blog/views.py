@@ -5,7 +5,8 @@ from .models import Post
 # Create your views here.
 
 def index(request):
-    postList=Post.objects.all().order_by('-created_time')
+    post_list=Post.objects.all().order_by('-created_time')
+    print(len(post_list))
     return render(request,'blog/index.html',context={
-                    'post_list':postList
+                    'post_list':post_list
                 })
